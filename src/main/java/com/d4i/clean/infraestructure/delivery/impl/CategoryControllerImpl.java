@@ -31,29 +31,29 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CategoryControllerImpl implements CategoryController {
 
-	private final GetAllCategoriesUseCase getAllCategoriesUseCase;
+    private final GetAllCategoriesUseCase getAllCategoriesUseCase;
 
-	private final CreateCategoryUseCase createCategoryUseCase;
+    private final CreateCategoryUseCase createCategoryUseCase;
 
-	private final CategoryRestConverter categoryRestConverter;
+    private final CategoryRestConverter categoryRestConverter;
 
-	@Override
-	@ResponseStatus(HttpStatus.OK)
-	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public NetflixResponse<Collection<CategoryRest>> getCategories() throws NetflixException {
-		return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-				getAllCategoriesUseCase.execute().stream().map(category -> categoryRestConverter.mapToRest(category))
-						.collect(Collectors.toList()));
-	}
+    @Override
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public NetflixResponse<Collection<CategoryRest>> getCategories() throws NetflixException {
+        return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
+                getAllCategoriesUseCase.execute().stream().map(category -> categoryRestConverter.mapToRest(category))
+                        .collect(Collectors.toList()));
+    }
 
-	@Override
-	@ResponseStatus(HttpStatus.OK)
-	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public NetflixResponse<Boolean> createCategory(@Valid @RequestBody final CategoryRest category) throws NetflixException {
-		
-		createCategoryUseCase.execute(categoryRestConverter.mapToEntity(category));
-		
-		return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK);
-	}
+    @Override
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public NetflixResponse<Boolean> createCategory(@Valid @RequestBody final CategoryRest category) throws NetflixException {
+
+        createCategoryUseCase.execute(categoryRestConverter.mapToEntity(category));
+
+        return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK);
+    }
 
 }

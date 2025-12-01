@@ -14,34 +14,34 @@ import com.d4i.clean.infraestructure.persistence.repositories.CategoryRepository
 @Configuration
 public class CategoryConfiguration {
 
-	
-	@Autowired
-	private CategoryRepository categoryRepository;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
 
-	@Bean
-	public CategoryRepositoryConverter createCategoryRepositoryConverter() {
-		return new CategoryRepositoryConverter();
-	}
+    @Bean
+    public CategoryRepositoryConverter createCategoryRepositoryConverter() {
+        return new CategoryRepositoryConverter();
+    }
 
-	@Bean
-	public CategoryRestConverter createCategoryRestConverter() {
-		return new CategoryRestConverter();
-	}
+    @Bean
+    public CategoryRestConverter createCategoryRestConverter() {
+        return new CategoryRestConverter();
+    }
 
-	@Bean
-	public CategoryServiceImpl createCategoriServiceImpl() {
-		return new CategoryServiceImpl(categoryRepository, createCategoryRepositoryConverter());
-	}
+    @Bean
+    public CategoryServiceImpl createCategoriServiceImpl() {
+        return new CategoryServiceImpl(categoryRepository, createCategoryRepositoryConverter());
+    }
 
-	@Bean
-	public GetAllCategoriesUseCaseImpl createGetAllCategoriesUseCase() {
-		return new GetAllCategoriesUseCaseImpl(createCategoriServiceImpl());
-	}
-	
-	@Bean
-	public CreateCategoryUseCaseImpl createCreateCategoryUseCase() {
-		return new CreateCategoryUseCaseImpl(createCategoriServiceImpl());
-	}
+    @Bean
+    public GetAllCategoriesUseCaseImpl createGetAllCategoriesUseCase() {
+        return new GetAllCategoriesUseCaseImpl(createCategoriServiceImpl());
+    }
+
+    @Bean
+    public CreateCategoryUseCaseImpl createCreateCategoryUseCase() {
+        return new CreateCategoryUseCaseImpl(createCategoriServiceImpl());
+    }
 
 }

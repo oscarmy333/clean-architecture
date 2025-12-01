@@ -21,17 +21,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CategoryEntity implements Serializable {
 
-	private static final long serialVersionUID = 4471777119419172870L;
+    private static final long serialVersionUID = 4471777119419172870L;
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "categorySeq")
-	@SequenceGenerator(name = "categorySeq", sequenceName = "category_id_seq", allocationSize=1)
-	private Long id;
+    @SequenceGenerator(name = "categorySeq", sequenceName = "category_id_seq", allocationSize = 1)
+    private Long id;
 
-	@Column(name = "NAME", unique = true)
-	private String name;
+    @Column(name = "NAME", unique = true)
+    private String name;
 
-	@Column(name = "AVAILABLE", unique = true)
-	private Boolean available;
+    @Column(name = "AVAILABLE", unique = true)
+    private Boolean available;
 
 }

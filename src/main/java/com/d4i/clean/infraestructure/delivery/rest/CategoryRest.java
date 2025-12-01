@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CategoryRest implements Serializable {
 
-	private static final long serialVersionUID = 7809559376441998463L;
+    private static final long serialVersionUID = 7809559376441998463L;
 
-	@NotNull
-	private String name;
+    @NotNull
+    private String name;
 
-	@NotNull
-	private Boolean available;
+    @NotNull
+    private Boolean available;
 }

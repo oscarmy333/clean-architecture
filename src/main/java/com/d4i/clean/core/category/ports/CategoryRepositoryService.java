@@ -7,9 +7,9 @@ import com.d4i.clean.infraestructure.shared.exceptions.NetflixException;
 
 public interface CategoryRepositoryService {
 
-	public Collection<Category> getAllCategories();
-	
-	public void saveCategory(Category category) throws NetflixException;
+    public Collection<Category> getAllCategories();
 
-	public Boolean doesCategoryNameExists(String name);
+    public void saveCategory(Category category) throws NetflixException;
+
+    public Boolean doesCategoryNameExists(String name);
 }

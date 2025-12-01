@@ -10,16 +10,17 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CreateCategoryUseCaseImpl implements CreateCategoryUseCase {
 
-	private final CategoryRepositoryService categoryRepositoryService;
+    private final CategoryRepositoryService categoryRepositoryService;
 
-	@Override
-	public void execute(Category category) throws NetflixException {
+    @Override
+    public void execute(Category category) throws NetflixException {
 
-		if(categoryRepositoryService.doesCategoryNameExists(category.getName())) {
-			throw new CategoryAlreadyExistException("Not unique category");
-		};
+        if (categoryRepositoryService.doesCategoryNameExists(category.getName())) {
+            throw new CategoryAlreadyExistException("Not unique category");
+        }
+        ;
 
-		categoryRepositoryService.saveCategory(category);
-	}
+        categoryRepositoryService.saveCategory(category);
+    }
 
 }

@@ -16,24 +16,24 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CategoryServiceImpl implements CategoryRepositoryService {
 
-	private CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
 
-	private CategoryRepositoryConverter categoryRepositoryConverter;
+    private CategoryRepositoryConverter categoryRepositoryConverter;
 
-	@Override
-	public Collection<Category> getAllCategories() {
-		return categoryRepository.findAll().stream().map(category -> categoryRepositoryConverter.mapToEntity(category))
-				.collect(Collectors.toList());
-		
-	}
+    @Override
+    public Collection<Category> getAllCategories() {
+        return categoryRepository.findAll().stream().map(category -> categoryRepositoryConverter.mapToEntity(category))
+                .collect(Collectors.toList());
 
-	@Override
-	public void saveCategory(Category category) throws NetflixException {
-		categoryRepository.save(categoryRepositoryConverter.mapToTable(category));
-	}
+    }
 
-	public Boolean doesCategoryNameExists(String name) {
-		return !categoryRepository.findByName(name).isEmpty();
-	}
+    @Override
+    public void saveCategory(Category category) throws NetflixException {
+        categoryRepository.save(categoryRepositoryConverter.mapToTable(category));
+    }
+
+    public Boolean doesCategoryNameExists(String name) {
+        return !categoryRepository.findByName(name).isEmpty();
+    }
 
 }

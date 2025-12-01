@@ -6,6 +6,6 @@ import com.d4i.clean.core.category.Category;
 
 public interface GetAllCategoriesUseCase {
 
-	public Collection<Category> execute();
-	
+    public Collection<Category> execute();
+
 }

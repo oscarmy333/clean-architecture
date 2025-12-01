@@ -5,6 +5,6 @@ import com.d4i.clean.infraestructure.shared.exceptions.NetflixException;
 
 public interface CreateCategoryUseCase {
 
-	public void execute(Category category) throws NetflixException;
+    public void execute(Category category) throws NetflixException;
 
 }

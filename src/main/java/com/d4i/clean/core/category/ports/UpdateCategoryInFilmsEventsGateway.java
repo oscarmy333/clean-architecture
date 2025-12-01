@@ -1,10 +1,10 @@
 /**
- * 
+ *
  */
 package com.d4i.clean.core.category.ports;
 
 /**
- * @author juanchi
+ * @author labs
  *
  */
 public class UpdateCategoryInFilmsEventsGateway {

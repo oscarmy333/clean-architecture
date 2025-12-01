@@ -10,11 +10,12 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class GetAllCategoriesUseCaseImpl implements GetAllCategoriesUseCase {
 
-	private final CategoryRepositoryService categoryRepositoryService;
+    private final CategoryRepositoryService categoryRepositoryService;
 
-	@Override
-	public Collection<Category> execute() {
-		return categoryRepositoryService.getAllCategories();
-	}
+    @Override
+    public Collection<Category> execute() {
+        return categoryRepositoryService.getAllCategories();
+    }
 
 }
+

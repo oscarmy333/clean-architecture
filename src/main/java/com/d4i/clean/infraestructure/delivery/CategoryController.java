@@ -8,8 +8,8 @@ import com.d4i.clean.infraestructure.shared.exceptions.NetflixException;
 
 public interface CategoryController {
 
-	NetflixResponse<Collection<CategoryRest>> getCategories() throws NetflixException;
+    NetflixResponse<Collection<CategoryRest>> getCategories() throws NetflixException;
 
-	NetflixResponse<Boolean> createCategory(CategoryRest category) throws NetflixException;
+    NetflixResponse<Boolean> createCategory(CategoryRest category) throws NetflixException;
 
 }

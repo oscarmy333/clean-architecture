@@ -6,15 +6,15 @@ import com.d4i.clean.infraestructure.shared.RestConverter;
 
 public class CategoryRestConverter implements RestConverter<CategoryRest, Category> {
 
-	@Override
-	public Category mapToEntity(final CategoryRest rest) {
+    @Override
+    public Category mapToEntity(final CategoryRest rest) {
 
-		return new Category(null, rest.getName(), rest.getAvailable());
-	}
+        return new Category(null, rest.getName(), rest.getAvailable());
+    }
 
-	@Override
-	public CategoryRest mapToRest(final Category entity) {
-		return new CategoryRest(entity.getName(), entity.getAvailable());
-	}
+    @Override
+    public CategoryRest mapToRest(final Category entity) {
+        return new CategoryRest(entity.getName(), entity.getAvailable());
+    }
 
 }

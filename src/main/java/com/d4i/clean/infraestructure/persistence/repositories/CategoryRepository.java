@@ -9,5 +9,5 @@ import com.d4i.clean.infraestructure.persistence.entities.CategoryEntity;
 
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Long> {
 
-	public Collection<Category> findByName(String name);
+    public Collection<Category> findByName(String name);
 }
