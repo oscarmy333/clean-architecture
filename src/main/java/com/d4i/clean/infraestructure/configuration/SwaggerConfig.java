@@ -19,9 +19,10 @@ public class SwaggerConfig {
                 .build();
     }
 
+    @Bean
     private OpenAPI customOpenApi() {
         return new OpenAPI().info(new Info().title("Soy OscarMeneses").description("Apis realizadas con clean arquitecture")
-                .termsOfService("https://www.everis.com").license( new License().name("everis").url("https://www.everis.com"))
+                .termsOfService("https://www.unsch.edu.pe").license( new License().name("UNSCH").url("https://www.unsch.edu.pe"))
                 .version("1.0"));
     }
 
