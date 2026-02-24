@@ -18,7 +18,6 @@ public class CreateCategoryUseCaseImpl implements CreateCategoryUseCase {
         if (categoryRepositoryService.doesCategoryNameExists(category.getName())) {
             throw new CategoryAlreadyExistException("Not unique category");
         }
-        ;
 
         categoryRepositoryService.saveCategory(category);
     }

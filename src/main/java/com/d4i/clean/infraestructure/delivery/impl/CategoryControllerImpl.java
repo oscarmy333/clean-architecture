@@ -3,7 +3,7 @@ package com.d4i.clean.infraestructure.delivery.impl;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -40,9 +40,9 @@ public class CategoryControllerImpl implements CategoryController {
     @Override
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public NetflixResponse<Collection<CategoryRest>> getCategories() throws NetflixException {
+    public NetflixResponse<Collection<CategoryRest>> getCategories() {
         return new NetflixResponse<>(CommonConstants.SUCCESS, String.valueOf(HttpStatus.OK), CommonConstants.OK,
-                getAllCategoriesUseCase.execute().stream().map(category -> categoryRestConverter.mapToRest(category))
+                getAllCategoriesUseCase.execute().stream().map(categoryRestConverter::mapToRest)
                         .collect(Collectors.toList()));
     }
 

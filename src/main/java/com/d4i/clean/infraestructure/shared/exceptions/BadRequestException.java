@@ -1,16 +1,21 @@
 package com.d4i.clean.infraestructure.shared.exceptions;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
-import lombok.Data;
+import java.io.Serial;
 
-@Data
-public class BadRequestException extends NetflixException{
 
-	private static final long serialVersionUID = -5330068136795055851L;
+@Getter
+@Setter
+public class BadRequestException extends NetflixException {
 
-	public BadRequestException(final String message) {
-		super(HttpStatus.BAD_REQUEST.value(), message);
-	}
+    @Serial
+    private static final long serialVersionUID = -5330068136795055851L;
+
+    public BadRequestException(String message) {
+        super(HttpStatus.BAD_REQUEST.value(), message);
+    }
 
 }

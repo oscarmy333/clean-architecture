@@ -7,8 +7,6 @@ import com.d4i.clean.core.category.Category;
 import com.d4i.clean.core.category.ports.CategoryRepositoryService;
 import com.d4i.clean.infraestructure.persistence.converters.CategoryRepositoryConverter;
 import com.d4i.clean.infraestructure.persistence.repositories.CategoryRepository;
-import com.d4i.clean.infraestructure.shared.constants.ExceptionConstants;
-import com.d4i.clean.infraestructure.shared.exceptions.BadRequestException;
 import com.d4i.clean.infraestructure.shared.exceptions.NetflixException;
 
 import lombok.AllArgsConstructor;
@@ -28,7 +26,7 @@ public class CategoryServiceImpl implements CategoryRepositoryService {
     }
 
     @Override
-    public void saveCategory(Category category) throws NetflixException {
+    public void saveCategory(Category category) {
         categoryRepository.save(categoryRepositoryConverter.mapToTable(category));
     }
 
